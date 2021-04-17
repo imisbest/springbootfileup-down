@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.com.csw.dao.FileDao">
+    <select id="queryAll" resultType="File1">
+    SELECT id,oname,nname,z_file,path,sizes,type,istrue,count from ffile
+  </select>
+
+    <insert id="addFile">
+        insert into ffile VALUES (#{f.id},#{f.oname},#{f.nname},#{f.z_file},#{f.path},
+        #{f.sizes},#{f.type},#{f.istrue},#{f.count})
+    </insert>
+    <delete id="delete">
+        delete from ffile where id=#{id}
+    </delete>
+    <select id="queryById" resultType="File1">
+        select id,oname,nname,z_file,path,sizes,type,istrue,count from ffile where id=#{id}
+    </select>
+    <update id="updateCount">
+        UPDATE ffile set count=#{f.count} where id=#{f.id}
+    </update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
